@@ -1,29 +1,69 @@
-module rom(
-input [7:0] addr,
-output reg [7:0] dane,
-output reg [7:0] wartosc
-);
+`timescale 1ns/1ps
+`include "./src/control/instructions.v"
 
-always @(addr)
-begin
-	case(addr)
-		8'd0: {dane, wartosc} <= 16'h0C00;   //NOP     C0
-		8'd1: {dane, wartosc} <= 16'h0D07;   //LDI 7   D7
-		8'd2: {dane, wartosc} <= 16'h0601;   //ST P1   61
-		8'd3: {dane, wartosc} <= 16'h0D05;   //LDI 5   D5
-		8'd4: {dane, wartosc} <= 16'h0602;   //ST P2   62
-		8'd5: {dane, wartosc} <= 16'h0701;   //LD P1   71
-		8'd6: {dane, wartosc} <= 16'h0B04;   //ST R4   B4
-		8'd7: {dane, wartosc} <= 16'h0702;   //LD P2   72
-		8'd8: {dane, wartosc} <= 16'h0504;   //ADD R4  54
-		8'd9: {dane, wartosc} <= 16'h0C00;   //NOP     C0
-		8'd10: {dane, wartosc} <= 16'h0E03;  //JMP 3   E3
-		8'd11: {dane, wartosc} <= 16'h0500;  //ADD R   50
-		8'd12: {dane, wartosc} <= 16'h0800;  //DEC A   80
-		8'd13: {dane, wartosc} <= 16'h0900;  //INC A   90
-		8'd14: {dane, wartosc} <= 16'h0F00;  //RST     F0
-		8'd15: {dane, wartosc} <= 16'h0F00;
-		default: {dane, wartosc} <= 16'h0F00;
-		endcase
+module rom(clk, addr, data);
+
+parameter RAM_WORD_WIDTH = 24;
+parameter RAM_ADDR_BITS = 8;
+
+input clk;
+input [RAM_ADDR_BITS-1 : 0] addr;
+output reg [RAM_WORD_WIDTH-1 : 0] data;
+
+
+reg [RAM_WORD_WIDTH-1:0] mem [(2**RAM_ADDR_BITS)-1:0];
+
+// test
+initial begin
+	// test 1
+	// mem [0]  = {`NOP,	16'h0};
+	// mem [1]  = {`LDI,	16'h5};
+	// mem [2]  = {`ST,	16'h1};
+	// mem [3]  = {`LDI,	16'h3};
+	// mem [4]  = {`ADD,	16'h1};
+	// mem [5]  = {`ST,	16'h2};
+	// mem [6]  = {`NOP,	16'h0};
+	// mem [7]  = {`NOP, 	16'h0};
+	// mem [8]  = {`LD, 	16'h2};
+	// mem [9]  = {`INC,	16'h0};
+	// mem [10] = {`JMP,	16'h9};
+	// mem [11] = {`RST,	16'h0};
+
+	//test 2
+	mem [0]  	= {`NOP,	16'h0};
+	mem [1]		= {`CLL,	16'd20};
+	mem [2]  	= {`LD, 	16'h2};
+	mem [2]  	= {`RST, 	16'h0};
+	mem [20] 	= {`LDI,	16'h5};
+	mem [21]  	= {`ST,		16'h1};
+	mem [22]  	= {`LDI,	16'h3};
+	mem [23]  	= {`ADD,	16'h1};
+	mem [24]  	= {`ST,		16'h2};
+	mem [25]  	= {`RET,	16'h0};
+
+	
+	//test 3
+	// mem [0]  	= {`NOP,	16'h0};
+	// mem [1]		= {`CLL,	16'd4};
+	// mem [2]  	= {`RST, 	16'h0};
+
+	// mem [4] 	= {`LDI,	16'h1};
+	// mem [5]  	= {`ST,		16'h3};
+	// mem [6]  	= {`ST,		16'h2};
+	// mem [7] 	= {`LDI,	16'h5};
+	// mem [8]  	= {`ST,		16'h0};
+	// mem [9]  	= {`LD,		16'h3};
+	// mem [10]  	= {`ADD,	16'h2};
+	// mem [11]  	= {`ST,		16'h2};
+	// mem [12]  	= {`LD,		16'h0};
+	// mem [13]  	= {`DEC,	16'h0};
+	// mem [14]  	= {`JMA,	16'h8};
+	// mem [15]  	= {`RET,	16'h0};
 end
+
+always @(*) begin
+    data <= mem[addr];
+end
+
 endmodule
+

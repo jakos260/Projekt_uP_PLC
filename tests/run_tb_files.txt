@@ -1,21 +1,14 @@
-./procesor_1.v
+./up.v
 
-./src/basic/akumulator.v
+./src/basic/a.v
 ./src/basic/alu.v
 
-./src/control/licznik.v
-./src/control/dekoder.v
+./src/control/counter.v
+./src/control/id.v
 
-./src/IO/demultiplekser_wyjsc.v
-./src/IO/multiplekser_wejsc.v
-./src/IO/rejestr_wejsc_wyjsc.v
-./src/IO/rejestr_wejsc.v
-./src/IO/wyjscie.v
-
-./src/memory/pamiec.v
 ./src/memory/rom.v
-./src/memory/registers/rf.v
-./src/memory/registers/demux_rejestr.v
-./src/memory/registers/mux_rejestr.v
+./src/memory/rf.v
+./src/memory/registers.v
 
-./src/utils/multiplekser4na1.v
+./src/utils/mux.v
+./src/utils/stack.v

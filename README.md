@@ -11,4 +11,4 @@ tutorial tb:
 https://www.youtube.com/watch?v=62PaWR9lDOk&ab_channel=NanoTechByteGenius
 
 ### uruchomienie tb
-./tests/run_tb.ps1 -files_to_tb_path ./tests/run_tb_files.txt
+cmd -> ./tests/run_tb.ps1 -files_to_tb_path ./tests/run_tb_files.txt
