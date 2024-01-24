@@ -11,7 +11,7 @@ reg rst = 1'b0;
 // wire out [3:0];
 
 // DUT instantiation
-up P(
+up uProcessor(
     .clk_in(clk),
     .rst_in(rst)
 );
@@ -34,7 +34,7 @@ end
 
 initial begin
     $dumpfile("tests/up_tb.vcd");
-    $dumpvars(0, processor_tb);
+    $dumpvars(0, up_tb);
     $dumpon;
 end
 

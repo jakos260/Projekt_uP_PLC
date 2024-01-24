@@ -1,12 +1,14 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Wed Jan 24 00:06:43 2024
+[*] Wed Jan 24 00:06:24 2024
 [*]
-[dumpfile] "D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\tests\tests\up_tb.vcd"
-[savefile] "D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\tests\up_tb.P.rst"
+[dumpfile] "D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\tests\up_tb.vcd"
+[dumpfile_mtime] "Wed Jan 24 00:04:05 2024"
+[dumpfile_size] 15966
+[savefile] "D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\up_tb.P.rst"
 [timestart] 0
 [size] 1536 801
-[pos] -1 -1
+[pos] -165 -165
 *-12.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] up_tb.
 [sst_width] 197
@@ -19,9 +21,8 @@ up_tb.uProcessor.clk_in
 up_tb.uProcessor.pc_bits[7:0]
 [color] 7
 up_tb.uProcessor.rom_data[23:0]
-@2023
+@23
 [color] 7
-^1 D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\tests\opcodes.gtkw
 up_tb.uProcessor.op[7:0]
 @22
 up_tb.uProcessor.out[15:0]
