@@ -1,0 +1,111 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Jan 24 13:13:40 2024
+[*]
+[dumpfile] "D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\tests\tests\up_tb.vcd"
+[savefile] "D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\tests\tests\"
+[timestart] 0
+[size] 1536 801
+[pos] -2007 -87
+*-13.000000 4500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] up_tb.
+[treeopen] up_tb.uProcessor.
+[treeopen] up_tb.uProcessor.Plc_IO_Ports.
+[sst_width] 197
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 224
+@28
+up_tb.uProcessor.clk_in
+@22
+up_tb.uProcessor.pc_bits[7:0]
+up_tb.uProcessor.rom_data[23:0]
+@2023
+^2 D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\tests\opcodes.gtkw
+up_tb.uProcessor.op[7:0]
+@28
+up_tb.uProcessor.Plc_IO_Ports.d0_io
+up_tb.uProcessor.acu_en
+@22
+up_tb.uProcessor.acu_out[15:0]
+up_tb.uProcessor.acu_rom_out[15:0]
+@28
+up_tb.uProcessor.acu_zero
+@22
+up_tb.uProcessor.alu_out[15:0]
+@28
+up_tb.uProcessor.alu_overflow
+@c00022
+up_tb.uProcessor.a0_io[15:0]
+@28
+(0)up_tb.uProcessor.a0_io[15:0]
+(1)up_tb.uProcessor.a0_io[15:0]
+(2)up_tb.uProcessor.a0_io[15:0]
+(3)up_tb.uProcessor.a0_io[15:0]
+(4)up_tb.uProcessor.a0_io[15:0]
+(5)up_tb.uProcessor.a0_io[15:0]
+(6)up_tb.uProcessor.a0_io[15:0]
+(7)up_tb.uProcessor.a0_io[15:0]
+(8)up_tb.uProcessor.a0_io[15:0]
+(9)up_tb.uProcessor.a0_io[15:0]
+(10)up_tb.uProcessor.a0_io[15:0]
+(11)up_tb.uProcessor.a0_io[15:0]
+(12)up_tb.uProcessor.a0_io[15:0]
+(13)up_tb.uProcessor.a0_io[15:0]
+(14)up_tb.uProcessor.a0_io[15:0]
+(15)up_tb.uProcessor.a0_io[15:0]
+@1401200
+-group_end
+@28
+up_tb.uProcessor.d0_io
+up_tb.uProcessor.d1_io
+up_tb.uProcessor.d2_io
+up_tb.uProcessor.d3_io
+up_tb.uProcessor.io_en
+@22
+up_tb.uProcessor.io_out[15:0]
+@28
+up_tb.uProcessor.jmp_en
+up_tb.uProcessor.ldi
+@22
+up_tb.uProcessor.out[15:0]
+@28
+up_tb.uProcessor.r_or_w
+@22
+up_tb.uProcessor.reg_out[15:0]
+up_tb.uProcessor.ret_addr[7:0]
+@28
+up_tb.uProcessor.rf_en
+@22
+up_tb.uProcessor.rf_io_out[15:0]
+@28
+up_tb.uProcessor.rst
+up_tb.uProcessor.rst_id
+up_tb.uProcessor.rst_in
+up_tb.uProcessor.stack_empty
+up_tb.uProcessor.stack_full
+up_tb.uProcessor.stack_pop
+up_tb.uProcessor.stack_push
+@420
+up_tb.uProcessor.Plc_IO_Ports.BITS
+@22
+up_tb.uProcessor.Plc_IO_Ports.a0_io[15:0]
+@28
+up_tb.uProcessor.Plc_IO_Ports.clk
+up_tb.uProcessor.Plc_IO_Ports.d0_io
+up_tb.uProcessor.Plc_IO_Ports.d1_io
+up_tb.uProcessor.Plc_IO_Ports.d2_io
+up_tb.uProcessor.Plc_IO_Ports.d3_io
+@22
+up_tb.uProcessor.Plc_IO_Ports.data_in[15:0]
+up_tb.uProcessor.Plc_IO_Ports.data_out[15:0]
+@28
+up_tb.uProcessor.Plc_IO_Ports.en
+@22
+up_tb.uProcessor.Plc_IO_Ports.io_addr[3:0]
+@28
+up_tb.uProcessor.Plc_IO_Ports.r_or_w
+up_tb.uProcessor.Plc_IO_Ports.A0.en
+up_tb.uProcessor.Plc_IO_Ports.D0.en
+[pattern_trace] 1
+[pattern_trace] 0

@@ -7,13 +7,33 @@ integer i;
 reg clk = 1'b1;
 reg rst = 1'b0;
 
-// Design Inputs and outputs
-// wire out [3:0];
+// plc signals
+reg [15:0] pressure;
+reg start   = 0;
+reg stop    = 0;
+wire motor  = 0;
+wire max    = 0;
+
+// io wires
+wire [15:0] a0;
+wire d0, d1, d2, d3;
+// assign to io
+assign a0 = pressure;
+assign d0 = start;
+assign d1 = stop;
+assign d2 = motor;
+assign d3 = max;
+
 
 // DUT instantiation
 up uProcessor(
     .clk_in(clk),
-    .rst_in(rst)
+    .rst_in(rst),
+    .a0_io(a0),
+    .d0_io(d0),
+    .d1_io(d1),
+    .d2_io(d2),
+    .d3_io(d3)
 );
 
 
