@@ -19,7 +19,7 @@ module analog_io(clk, en, direction, data_in, data_out, io_port);
         b = 16'dz;
     end
 
-    always @ (negedge clk) begin
+    always @ (*) begin
         if(en) begin
             b <= io_port;
             a <= data_in;

@@ -69,7 +69,7 @@ initial begin
 	mem [3]		= {`IOR,	16'h2}; // io[2] (d1) 	-> acu
 	mem [4]  	= {`ST, 	16'h1}; // acu 			-> rf[1]
 	mem [5] 	= {`LDI,	16'h4}; // 4 			-> acu
-	mem [6]		= {`IOW,	16'h0}; // acu 			-> io[0] (a0)
+	mem [6]		= {`IOW,	16'h3}; // acu 			-> io[3] (d2)
 	mem [7]  	= {`DEC,	16'h0}; // acu --		-> acu
 	mem [8]  	= {`JMA,	16'h6}; // if(acu!=0) pc = 6
 	mem [9]  	= {`NOP,	16'h0};

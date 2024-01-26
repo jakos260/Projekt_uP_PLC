@@ -1,5 +1,5 @@
 $date
-	Fri Jan 26 08:44:53 2024
+	Fri Jan 26 11:05:31 2024
 $end
 $version
 	Icarus Verilog
@@ -92,20 +92,21 @@ $var parameter 32 V WIDTH $end
 $var reg 16 W out [15:0] $end
 $upscope $end
 $scope module Mux_rf_io $end
-$var wire 1 X sel $end
-$var wire 16 Y in2 [15:0] $end
-$var wire 16 Z in1 [15:0] $end
-$var parameter 32 [ WIDTH $end
-$var reg 16 \ out [15:0] $end
+$var wire 1 ? sel $end
+$var wire 16 X in2 [15:0] $end
+$var wire 16 Y in1 [15:0] $end
+$var parameter 32 Z WIDTH $end
+$var reg 16 [ out [15:0] $end
 $upscope $end
 $scope module Plc_IO_Ports $end
-$var wire 16 ] a0_io [15:0] $end
+$var wire 16 \ a0_io [15:0] $end
 $var wire 1 ( clk $end
 $var wire 1 " d0_io $end
 $var wire 1 # d1_io $end
 $var wire 1 $ d2_io $end
 $var wire 1 % d3_io $end
-$var wire 16 ^ data_in [15:0] $end
+$var wire 16 ] data_in [15:0] $end
+$var wire 1 ^ direction $end
 $var wire 1 ? en $end
 $var wire 4 _ io_addr [3:0] $end
 $var wire 1 9 r_or_w $end
@@ -120,7 +121,7 @@ $scope module A0 $end
 $var wire 1 ( clk $end
 $var wire 16 g data_in [15:0] $end
 $var wire 16 h data_out [15:0] $end
-$var wire 1 9 direction $end
+$var wire 1 ^ direction $end
 $var wire 1 i en $end
 $var wire 16 j io_port [15:0] $end
 $var parameter 32 k BITS $end
@@ -131,7 +132,7 @@ $scope module D0 $end
 $var wire 1 ( clk $end
 $var wire 1 n data_in $end
 $var wire 1 c data_out $end
-$var wire 1 9 direction $end
+$var wire 1 ^ direction $end
 $var wire 1 o en $end
 $var wire 1 " io_port $end
 $var reg 1 p a $end
@@ -141,7 +142,7 @@ $scope module D1 $end
 $var wire 1 ( clk $end
 $var wire 1 r data_in $end
 $var wire 1 b data_out $end
-$var wire 1 9 direction $end
+$var wire 1 ^ direction $end
 $var wire 1 s en $end
 $var wire 1 # io_port $end
 $var reg 1 t a $end
@@ -151,7 +152,7 @@ $scope module D2 $end
 $var wire 1 ( clk $end
 $var wire 1 v data_in $end
 $var wire 1 a data_out $end
-$var wire 1 9 direction $end
+$var wire 1 ^ direction $end
 $var wire 1 w en $end
 $var wire 1 $ io_port $end
 $var reg 1 x a $end
@@ -161,7 +162,7 @@ $scope module D3 $end
 $var wire 1 ( clk $end
 $var wire 1 z data_in $end
 $var wire 1 ` data_out $end
-$var wire 1 9 direction $end
+$var wire 1 ^ direction $end
 $var wire 1 { en $end
 $var wire 1 % io_port $end
 $var reg 1 | a $end
@@ -218,7 +219,7 @@ b10000 %"
 b10000 $"
 b10000 k
 b10000 e
-b10000 [
+b10000 Z
 b10000 V
 b10000 N
 b10000 I
@@ -264,12 +265,12 @@ zb
 za
 z`
 bz _
-b0 ^
-b101 ]
-bz \
-bz Z
+0^
+b0 ]
+b101 \
+bz [
 bz Y
-1X
+bz X
 b0 W
 b0 U
 b0 T
@@ -277,19 +278,19 @@ b0 S
 b10011 R
 b1 Q
 b10011 P
-b0 O
+bx O
 b0 M
 bz L
 b10011 K
 b0 J
-b0 H
+bx H
 0G
 b0 F
 0E
 b0 D
 b0 C
 0B
-b0 A
+bx A
 x@
 0?
 bz >
@@ -315,20 +316,29 @@ b0 -
 0*
 b101 )
 1(
-0'
-0&
-0%
-0$
+z'
+z&
+z%
+z$
 1#
 0"
 b101 !
 $end
 #1000
-bz A
-bz H
-bz O
+b101 5
+b101 L
+b101 [
+b101 >
+b101 X
+b101 f
+b0 l
+b101 d
+b101 h
+b101 m
+b101 A
+b101 H
+b101 O
 1i
-0X
 b0 _
 1E
 1?
@@ -348,49 +358,41 @@ b1 -
 b10 -
 1(
 #3000
-b101 5
-b101 L
-b101 \
+bz 5
+bz L
+bz [
+bz >
+bz X
+bz f
 b0 #"
 0i
-1X
 bz _
-b0x0x !
-b0x0x .
-b0x0x ]
-b0x0x j
 0E
 16
 0?
+1^
 19
 b1111 ;
 b1111 K
 b1111 R
 b1111 P
-b101 >
-b101 Y
-b101 f
-bz C
-bz M
-bz W
-bz F
+b101 C
+b101 M
+b101 W
+b101 l
+b101 F
 b11110000000000000000 4
 b11110000000000000000 *"
-zn
-zr
-zv
-zz
-b0 l
-b101 d
-b101 h
-b101 m
-xB
-bz D
-bz J
-bz T
-bz ^
-bz g
-bz ""
+1n
+1r
+1v
+1z
+b101 D
+b101 J
+b101 T
+b101 ]
+b101 g
+b101 ""
 b10 :
 b10 !"
 b10 '"
@@ -401,25 +403,24 @@ b11 -
 b100 -
 1(
 #5000
-bz 5
-bz L
-bz \
-b0z >
-b0z Y
-b0z f
-bz A
-bz H
-bz O
+b1 5
+b1 L
+b1 [
+1t
+1b
+1u
+b1 >
+b1 X
+b1 f
+b1 A
+b1 H
+b1 O
 1s
-0X
 b10 _
-b101 !
-b101 .
-b101 ]
-b101 j
 1E
 06
 1?
+0^
 09
 b10000 ;
 b10000 K
@@ -439,18 +440,21 @@ b101 -
 b110 -
 1(
 #7000
-b0z 5
-b0z L
-b0z \
+bz 5
+bz L
+bz [
 b1 #"
-1X
-b0x0x !
-b0x0x .
-b0x0x ]
-b0x0x j
+x"
+1p
+0c
+0q
+bz >
+bz X
+bz f
 0E
 16
 0?
+1^
 19
 b1111 ;
 b1111 K
@@ -460,13 +464,18 @@ b1111 R
 bz _
 b1 U
 b1111 P
-b0z >
-b0z Y
-b0z f
+b1 C
+b1 M
+b1 W
+b1 F
 b11110000000000000001 4
 b11110000000000000001 *"
-1b
-1u
+b1 D
+b1 J
+b1 T
+b1 ]
+b1 g
+b1 ""
 b100 :
 b100 !"
 b100 '"
@@ -483,13 +492,11 @@ b100 O
 b100 C
 b100 M
 b100 W
-b101 !
-b101 .
-b101 ]
-b101 j
+0"
 1E
 1<
 06
+0^
 09
 b10010 ;
 b10010 K
@@ -509,43 +516,43 @@ b1001 -
 b1010 -
 1(
 #11000
-bz 5
-bz L
-bz \
-b101 >
-b101 Y
-b101 f
-1i
-0X
-b0 _
-b0x0x !
-b0x0x .
-b0x0x ]
-b0x0x j
+0a
+0y
+b0 5
+b0 L
+b0 [
+0$
+0x
+b0 >
+b0 X
+b0 f
+1w
+b11 _
+x"
 b100 C
 b100 M
 b100 W
 0E
 0<
 1?
+1^
 19
 b10001 ;
 b10001 K
 b10001 R
-b0 U
+b11 U
 b10001 P
 b100 F
-b100010000000000000000 4
-b100010000000000000000 *"
+b100010000000000000011 4
+b100010000000000000011 *"
 0n
 0r
 0v
 0z
-0B
 b100 D
 b100 J
 b100 T
-b100 ^
+b100 ]
 b100 g
 b100 ""
 b110 :
@@ -558,39 +565,36 @@ b1011 -
 b1100 -
 1(
 #13000
-b0x0x 5
-b0x0x L
-b0x0x \
+bz 5
+bz L
+bz [
 b11 A
 b11 H
 b11 O
-0i
-1X
-bz _
+0"
+z$
+b100 l
+bz >
+bz X
+bz f
 1E
 0?
+0^
 09
 b1000 ;
 b1000 K
 b1000 R
+0i
+0w
+bz _
+b0 U
 b1000 P
 b10000000000000000000 4
 b10000000000000000000 *"
-b0x0x >
-b0x0x Y
-b0x0x f
-b101 !
-b101 .
-b101 ]
-b101 j
 b111 :
 b111 !"
 b111 '"
 b111 +"
-b100 l
-b0x0x d
-b0x0x h
-b0x0x m
 b1101 -
 0(
 #14000
@@ -621,7 +625,7 @@ b10110000000000000110 *"
 b11 D
 b11 J
 b11 T
-b11 ^
+b11 ]
 b11 g
 b11 ""
 b1000 :
@@ -634,27 +638,35 @@ b1111 -
 b10000 -
 1(
 #17000
-bz 5
-bz L
-bz \
-1i
-0X
-b0 _
+1a
+1y
+b1 5
+b1 L
+b1 [
+1x
+b1 >
+b1 X
+b1 f
+1w
+b11 _
 b10x !
 b10x .
-b10x ]
+b10x \
 b10x j
+x"
+1$
 1?
+1^
 19
 0=
 b10001 ;
 b10001 K
 b10001 R
 bz ~
-b0 U
+b11 U
 b10001 P
-b100010000000000000000 4
-b100010000000000000000 *"
+b100010000000000000011 4
+b100010000000000000011 *"
 b110 :
 b110 !"
 b110 '"
@@ -665,32 +677,36 @@ b10001 -
 b10010 -
 1(
 #19000
-b10x 5
-b10x L
-b10x \
-0i
-1X
-bz _
-1E
-0?
-09
-b1000 ;
-b1000 K
-b1000 R
-b1000 P
-b10x >
-b10x Y
-b10x f
-b10000000000000000000 4
-b10000000000000000000 *"
+bz 5
+bz L
+bz [
 b101 !
 b101 .
-b101 ]
+b101 \
 b101 j
+0"
+z$
 b11 l
 b10x d
 b10x h
 b10x m
+bz >
+bz X
+bz f
+1E
+0?
+0^
+09
+b1000 ;
+b1000 K
+b1000 R
+0i
+0w
+bz _
+b0 U
+b1000 P
+b10000000000000000000 4
+b10000000000000000000 *"
 b111 :
 b111 !"
 b111 '"
@@ -729,7 +745,7 @@ b1000 +"
 b10 D
 b10 J
 b10 T
-b10 ^
+b10 ]
 b10 g
 b10 ""
 b10101 -
@@ -738,27 +754,35 @@ b10101 -
 b10110 -
 1(
 #23000
-bz 5
-bz L
-bz \
-1i
-0X
-b0 _
+0a
+0y
+b0 5
+b0 L
+b0 [
+0x
+b0 >
+b0 X
+b0 f
+1w
+b11 _
 b0xx1 !
 b0xx1 .
-b0xx1 ]
+b0xx1 \
 b0xx1 j
+x"
+0$
 1?
+1^
 19
 0=
 b10001 ;
 b10001 K
 b10001 R
 bz ~
-b0 U
+b11 U
 b10001 P
-b100010000000000000000 4
-b100010000000000000000 *"
+b100010000000000000011 4
+b100010000000000000011 *"
 b110 :
 b110 !"
 b110 '"
@@ -769,36 +793,40 @@ b10111 -
 b11000 -
 1(
 #25000
-b0xx1 5
-b0xx1 L
-b0xx1 \
-0i
-1X
-bz _
-1E
-0?
-09
-b1000 ;
-b1000 K
-b1000 R
-b1000 P
-b10000000000000000000 4
-b10000000000000000000 *"
-b0xx1 >
-b0xx1 Y
-b0xx1 f
+bz 5
+bz L
+bz [
 b101 !
 b101 .
-b101 ]
+b101 \
 b101 j
-b111 :
-b111 !"
-b111 '"
-b111 +"
+0"
+z$
 b10 l
 b0xx1 d
 b0xx1 h
 b0xx1 m
+bz >
+bz X
+bz f
+1E
+0?
+0^
+09
+b1000 ;
+b1000 K
+b1000 R
+0i
+0w
+bz _
+b0 U
+b1000 P
+b10000000000000000000 4
+b10000000000000000000 *"
+b111 :
+b111 !"
+b111 '"
+b111 +"
 b11001 -
 0(
 #26000
@@ -829,7 +857,7 @@ b10110000000000000110 *"
 b1 D
 b1 J
 b1 T
-b1 ^
+b1 ]
 b1 g
 b1 ""
 b1000 :
@@ -842,27 +870,35 @@ b11011 -
 b11100 -
 1(
 #29000
-bz 5
-bz L
-bz \
-1i
-0X
-b0 _
+1a
+1y
+b1 5
+b1 L
+b1 [
+1x
+b1 >
+b1 X
+b1 f
+1w
+b11 _
 b0xxx !
 b0xxx .
-b0xxx ]
+b0xxx \
 b0xxx j
+x"
+1$
 1?
+1^
 19
 0=
 b10001 ;
 b10001 K
 b10001 R
 bz ~
-b0 U
+b11 U
 b10001 P
-b100010000000000000000 4
-b100010000000000000000 *"
+b100010000000000000011 4
+b100010000000000000011 *"
 b110 :
 b110 !"
 b110 '"
@@ -873,32 +909,36 @@ b11101 -
 b11110 -
 1(
 #31000
-b0xxx 5
-b0xxx L
-b0xxx \
-0i
-1X
-bz _
-1E
-0?
-09
-b1000 ;
-b1000 K
-b1000 R
-b1000 P
-b0xxx >
-b0xxx Y
-b0xxx f
-b10000000000000000000 4
-b10000000000000000000 *"
+bz 5
+bz L
+bz [
 b101 !
 b101 .
-b101 ]
+b101 \
 b101 j
+0"
+z$
 b1 l
 b0xxx d
 b0xxx h
 b0xxx m
+bz >
+bz X
+bz f
+1E
+0?
+0^
+09
+b1000 ;
+b1000 K
+b1000 R
+0i
+0w
+bz _
+b0 U
+b1000 P
+b10000000000000000000 4
+b10000000000000000000 *"
 b111 :
 b111 !"
 b111 '"
@@ -936,7 +976,7 @@ b1000 +"
 b0 D
 b0 J
 b0 T
-b0 ^
+b0 ]
 b0 g
 b0 ""
 b100001 -
