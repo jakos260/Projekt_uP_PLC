@@ -11,7 +11,7 @@ module analog_io(clk, en, direction, data_in, data_out, io_port);
     reg [BITS-1:0] a;
     reg [BITS-1:0] b;    
 
-    assign io_port  = direction ? a : 16'bz;
+    assign io_port  = en ? (direction ? a : 16'bz) : io_port;
     assign data_out = b;
 
     initial begin

@@ -10,7 +10,7 @@ module digital_io(clk, en, direction, data_in, data_out, io_port);
 
     reg a, b;    
 
-    assign io_port  = direction ? a : 1'bz;
+    assign io_port  = en ? (direction ? a : 1'bz) : io_port;
     assign data_out = b;
 
     initial begin
