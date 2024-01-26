@@ -9,6 +9,10 @@ module io_ports(
     input       [BITS-1:0] data_in;
     output reg  [BITS-1:0] data_out;
 
+    wire direction;
+    assign direction = r_or_w;
+    initial data_out = 16'dz;
+
     // io list
     inout [BITS-1:0] a0_io;
     inout            d0_io;
@@ -23,8 +27,6 @@ module io_ports(
     wire            d2_out;
     wire            d3_out;
 
-    initial data_out = 16'dz;
-
     always @(*) begin
         if(en) begin
             case(io_addr)
@@ -36,12 +38,14 @@ module io_ports(
                 default: data_out <= 16'dz;
             endcase
         end
+        else
+            data_out <= 16'dz;
     end
     
     analog_io A0 (
         .clk(clk),
         .en(io_addr == 4'b0000 ? en : 1'b0),
-        .direction(r_or_w),
+        .direction(direction),
         .data_in(data_in),
         .data_out(a0_out),
         .io_port(a0_io)
@@ -50,7 +54,7 @@ module io_ports(
     digital_io D0 (
         .clk(clk),
         .en(io_addr == 4'b0001 ? en : 1'b0),
-        .direction(r_or_w),
+        .direction(direction),
         .data_in(data_in[0]),
         .data_out(d0_out),
         .io_port(d0_io)
@@ -59,7 +63,7 @@ module io_ports(
     digital_io D1 (
         .clk(clk),
         .en(io_addr == 4'b0010 ? en : 1'b0),
-        .direction(r_or_w),
+        .direction(direction),
         .data_in(data_in[0]),
         .data_out(d1_out),
         .io_port(d1_io)
@@ -68,7 +72,7 @@ module io_ports(
     digital_io D2 (
         .clk(clk),
         .en(io_addr == 4'b0011 ? en : 1'b0),
-        .direction(r_or_w),
+        .direction(direction),
         .data_in(data_in[0]),
         .data_out(d2_out),
         .io_port(d2_io)
@@ -77,7 +81,7 @@ module io_ports(
     digital_io D3 (
         .clk(clk),
         .en(io_addr == 4'b0100 ? en : 1'b0),
-        .direction(r_or_w),
+        .direction(direction),
         .data_in(data_in[0]),
         .data_out(d3_out),
         .io_port(d3_io)

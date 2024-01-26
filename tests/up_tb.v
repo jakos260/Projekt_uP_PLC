@@ -11,8 +11,8 @@ reg rst = 1'b0;
 reg [15:0] pressure = 5;
 reg start   = 0;
 reg stop    = 1;
-wire motor  = 0;
-wire max    = 0;
+wire motor;
+wire max;
 
 // io wires
 wire [15:0] a0;

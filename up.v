@@ -120,7 +120,7 @@ module up(
 		.in1(reg_out),
 		.in2(io_out),
 		.out(rf_io_out),
-		.sel(io_en ? 1'b0 : 1'b1)
+		.sel(io_en)
 	);
 
 	stack #(.WIDTH(8)) Stack(
