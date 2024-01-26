@@ -38,7 +38,7 @@ module up(
 	initial out <= 16'd0;
 	always @(*) begin
 		rst <= rst_in || rst_id;
-		out <= alu_out;
+		out <= acu_out;
 	end
 
 	counter ProgramCounter(

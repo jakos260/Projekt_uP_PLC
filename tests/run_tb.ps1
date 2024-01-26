@@ -9,4 +9,4 @@ param (
 $files = Get-Content $files_to_tb_path
 iverilog -o tests/up_tb.vvp ./tests/up_tb.v $files
 vvp tests/up_tb.vvp
-gtkwave -f ./tests/up_tb.vcd
+gtkwave -f ./tests/up_tb.vcd ./tests/up_tb.gtkw

@@ -14,9 +14,15 @@ module analog_io(clk, en, direction, data_in, data_out, io_port);
     assign io_port  = direction ? a : 16'bz;
     assign data_out = b;
 
-    always @ (posedge clk)
-    begin
-       b <= io_port;
-       a <= data_in;
+    initial begin
+        a = 16'dz;
+        b = 16'dz;
+    end
+
+    always @ (negedge clk) begin
+        if(en) begin
+            b <= io_port;
+            a <= data_in;
+        end
     end
 endmodule

@@ -28,6 +28,8 @@ always @(*) begin
         `RET:   out <= out;
         `LD:    out <= in2;
         `ST:    out <= out;
+        `IOR:   out <= in2;
+        `IOW:   out <= out;
         `LDI:   out <= in1;
         `NOP:   out <= out;
         `RST:   out <= 16'd0;

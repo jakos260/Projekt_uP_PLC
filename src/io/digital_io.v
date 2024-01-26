@@ -13,7 +13,12 @@ module digital_io(clk, en, direction, data_in, data_out, io_port);
     assign io_port  = direction ? a : 1'bz;
     assign data_out = b;
 
-    always @ (posedge clk)
+    initial begin
+        a = 1'dz;
+        b = 1'dz;
+    end
+
+    always @ (negedge clk)
     begin
         if(en) begin
             b <= io_port;

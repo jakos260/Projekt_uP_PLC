@@ -23,15 +23,17 @@ module io_ports(
     wire            d2_out;
     wire            d3_out;
 
+    initial data_out = 16'dz;
+
     always @(*) begin
         if(en) begin
             case(io_addr)
                 4'b0000: data_out <= a0_out;
-                4'b0001: data_out <= {15'b0, d0_out};
-                4'b0010: data_out <= {15'b0, d1_out};
-                4'b0011: data_out <= {15'b0, d2_out};
-                4'b0100: data_out <= {15'b0, d3_out};
-                default: data_out <= 16'bz;
+                4'b0001: data_out <= {15'd0, d0_out};
+                4'b0010: data_out <= {15'd0, d1_out};
+                4'b0011: data_out <= {15'd0, d2_out};
+                4'b0100: data_out <= {15'd0, d3_out};
+                default: data_out <= 16'dz;
             endcase
         end
     end

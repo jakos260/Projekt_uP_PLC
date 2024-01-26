@@ -19,25 +19,3 @@
 `define LDI 8'h12 // load  rom          -> accumulator
 `define NOP 8'h13
 `define RST 8'h14
-
-/*
-    case(instr)
-        4'd0:     {rst, decoded} <= {1'b0, `NOT}; // not
-        4'd1:     {rst, decoded} <= {1'b0, `XOR}; // xor
-        4'd2:     {rst, decoded} <= {1'b0, `OR};  // or
-        4'd3:     {rst, decoded} <= {1'b0, `AND}; // and
-        4'd4:     {rst, decoded} <= {1'b0, `SUB}; // sub
-        4'd5:     {rst, decoded} <= {1'b0, `ADD}; // add
-        4'd6:     {rst, decoded} <= {1'b0, `RR};  // rr
-        4'd7:     {rst, decoded} <= {1'b0, `RL};  // rl
-        4'd8:     {rst, decoded} <= {1'b0, `DEC}; // dec
-        4'd9:     {rst, decoded} <= {1'b0, `INC}; // inc
-        4'd10:    {rst, decoded} <= {1'b0, `LD};  // ld
-        4'd11:    {rst, decoded} <= {1'b0, `ST};  // st
-        4'd12:    {rst, decoded} <= {1'b0, `NOP}; // nop
-        4'd13:    {rst, decoded} <= {1'b0, `NOP}; // nop
-        4'd14:    {rst, decoded} <= {1'b1, `RST}; // rst
-        4'd15:    {rst, decoded} <= {1'b1, `RST}; // rst
-        default:  {rst, decoded} <= {1'b1, `RST}; // rst
-    endcase
-*/
