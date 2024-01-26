@@ -12,3 +12,8 @@ https://www.youtube.com/watch?v=62PaWR9lDOk&ab_channel=NanoTechByteGenius
 
 ### uruchomienie tb
 cmd -> ./tests/run_tb.ps1 -files_to_tb_path ./tests/run_tb_files.txt
+
+### na początku...
+cmd -> git clone https://github.com/jakos260/Projekt_uP_PLC.git
+cmd -> git branch <BRANCH_NAME>
+cmd -> git checkout <BRANCH_NAE>
