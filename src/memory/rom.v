@@ -16,6 +16,10 @@ reg [RAM_WORD_WIDTH-1:0] mem [(2**RAM_ADDR_BITS)-1:0];
 
 // test
 initial begin
+	// pbl program
+	mem[0] = {`NOP, 16'h0};
+	$readmemh("./plc_prog/prog.bin", mem, 1);
+
 	// test 1
 	// mem [0]  = {`NOP,	16'h0};
 	// mem [1]  = {`LDI,	16'h5};
@@ -76,42 +80,40 @@ initial begin
 	// mem [9]  	= {`NOP,	16'h0};
 	// mem [10]  	= {`RST,	16'h0};
 
-	// pbl program
-	// $readmemb("plc_prog.bin", mem);
 	
-	mem [0]  	= {`NOP,	16'h0};
-	// setup
-	mem [1]		= {`LDI,	16'D0};
-	mem [2]  	= {`IOW, 	`O_MAX};
-	mem [3]		= {`IOW,	`O_MOTOR};
-	mem [4]  	= {`LDI, 	16'D3};
-	mem [5] 	= {`ST,		`R_COUNTER};
-	mem [6]		= {`LDI,	16'd5};
-	mem [7]  	= {`ST,		`R_TIMER};
-	mem [8]  	= {`CLL,	`C_ROUTINE};
+	// mem [0]  	= {`NOP,	16'h0};
+	// // setup
+	// mem [1]		= {`LDI,	16'D0};
+	// mem [2]  	= {`IOW, 	`O_MAX};
+	// mem [3]		= {`IOW,	`O_MOTOR};
+	// mem [4]  	= {`LDI, 	16'D3};
+	// mem [5] 	= {`ST,		`R_COUNTER};
+	// mem [6]		= {`LDI,	16'd5};
+	// mem [7]  	= {`ST,		`R_TIMER};
+	// mem [8]  	= {`CLL,	`C_ROUTINE};
 
-	mem [14]	= {`RST, 	16'd0};
+	// mem [14]	= {`RST, 	16'd0};
 
-	// routine
-	mem [15]  	= {`CLL,	`C_RESET};
-	mem [16]  	= {`LD,		`R_SRQ};
-	mem [17]  	= {`JMA,	`C_TIMER_DEC};
-	// mem [17]	=
+	// // routine
+	// mem [15]  	= {`CLL,	`C_RESET};
+	// mem [16]  	= {`LD,		`R_SRQ};
+	// mem [17]  	= {`JMA,	`C_TIMER_DEC};
+	// // mem [17]	=
 
-	// reset
-	mem [20]  	= {`IOR,	`I_STOP};
-	mem [21]  	= {`NOT,	16'd0};
-	mem [22]  	= {`AND,	`R_COUNTER};
-	mem [23]  	= {`JMA,	`C_SET};
-	mem [24]  	= {`RET,	16'd0};
+	// // reset
+	// mem [20]  	= {`IOR,	`I_STOP};
+	// mem [21]  	= {`NOT,	16'd0};
+	// mem [22]  	= {`AND,	`R_COUNTER};
+	// mem [23]  	= {`JMA,	`C_SET};
+	// mem [24]  	= {`RET,	16'd0};
 
-	// set
-	mem [30]  	= {`IOR,	`I_START};
-	mem [31]  	= {`ST,		`R_SRQ};
-	mem [32]  	= {`RET,	16'd0};
+	// // set
+	// mem [30]  	= {`IOR,	`I_START};
+	// mem [31]  	= {`ST,		`R_SRQ};
+	// mem [32]  	= {`RET,	16'd0};
 
-	// timer decrementation
-	mem [35]	= {`LDI,	16'd1000};
+	// // timer decrementation
+	// mem [35]	= {`LDI,	16'd1000};
 
 
 end

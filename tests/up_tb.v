@@ -8,7 +8,7 @@ reg clk = 1'b1;
 reg rst = 1'b0;
 
 // plc signals
-reg [15:0] pressure = 5;
+reg [15:0] pressure = 16'hBFFF;
 reg start   = 0;
 reg stop    = 0;
 wire motor;
@@ -42,8 +42,9 @@ initial begin
     // Use the monitor task to display the FPGA IO
     // $monitor("time=%3d, q=%2b \n", $time, out);
     // Generate each input with a 20 ns delay between them
-    for (i = 0; i<60; i++) begin
+    for (i = 0; i<500; i++) begin
         #1 clk = ~clk;
+        if(i>100) start=1;
     end
     $finish;
 end

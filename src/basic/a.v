@@ -4,18 +4,18 @@ parameter WIDTH = 4;
 
 input ce, clk;
 input [WIDTH-1:0] in;
-output reg zero;
+output zero;
 output reg [WIDTH-1:0] out;
 
 initial begin
     out <= 16'd0;
-    zero <= 0;
 end
+assign zero = (out == 16'd0) ? 1'd1 : 1'd0;
 
 always @(negedge clk) begin
     if(ce) begin
         out <= in;
-        zero <= (in == 0) ? 1 : 0;
+        // zero <= (in == 0) ? 1 : 0;
     end
 end
 

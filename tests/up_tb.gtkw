@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Fri Jan 26 11:36:12 2024
+[*] Mon Jan 29 00:07:10 2024
 [*]
 [dumpfile] "D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\tests\up_tb.vcd"
-[dumpfile_mtime] "Fri Jan 26 11:36:03 2024"
-[dumpfile_size] 13263
+[dumpfile_mtime] "Mon Jan 29 00:00:39 2024"
+[dumpfile_size] 80831
 [savefile] "D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\tests\up_tb.gtkw"
-[timestart] 0
+[timestart] 90290
 [size] 1536 801
 [pos] -1 -1
-*-13.385984 6810 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-13.385984 100670 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] up_tb.
 [treeopen] up_tb.uProcessor.
 [treeopen] up_tb.uProcessor.Plc_IO_Ports.
@@ -21,11 +21,15 @@
 up_tb.uProcessor.clk_in
 @22
 up_tb.uProcessor.pc_bits[7:0]
+@2022
+^1 D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\tests\functions.gtkw
+up_tb.uProcessor.ProgramCounter.jmp_addr[7:0]
+@22
 [color] 7
 up_tb.uProcessor.rom_data[23:0]
 @2022
 [color] 7
-^1 D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\tests\opcodes.gtkw
+^2 D:\Programy\Quartus-lite-22.1std.1.917-windows\projects\Projekt_uP_PLC\tests\opcodes.gtkw
 up_tb.uProcessor.op[7:0]
 @28
 up_tb.uProcessor.acu_en
@@ -37,6 +41,11 @@ up_tb.uProcessor.r_or_w
 [color] 2
 up_tb.uProcessor.rst
 @22
+[color] 5
+up_tb.uProcessor.out[15:0]
+@200
+-
+@22
 up_tb.uProcessor.rf_io_out[15:0]
 up_tb.uProcessor.acu_rom_out[15:0]
 up_tb.uProcessor.alu_out[15:0]
@@ -47,15 +56,13 @@ up_tb.uProcessor.d1_io
 up_tb.uProcessor.d2_io
 up_tb.uProcessor.d3_io
 @22
-up_tb.uProcessor.out[15:0]
 up_tb.uProcessor.acu_out[15:0]
 up_tb.uProcessor.reg_out[15:0]
 up_tb.uProcessor.ret_addr[7:0]
-@23
 up_tb.uProcessor.Plc_IO_Ports.io_addr[3:0]
-@22
 up_tb.uProcessor.io_out[15:0]
 up_tb.uProcessor.rf_io_out[15:0]
 up_tb.uProcessor.Plc_IO_Ports.io_addr[3:0]
+up_tb.uProcessor.Registers.reg_addr[3:0]
 [pattern_trace] 1
 [pattern_trace] 0

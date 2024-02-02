@@ -22,6 +22,7 @@ always @(*) begin
         `RL:    out <= {in1[(WIDTH-2):0], in1[(WIDTH-1)]};
         `DEC:   out <= in1 - 1'b1;
         `INC:   out <= in1 + 1'b1;
+        `CMP:   out <= in1 >= in2 ? 16'd1 : 16'd0;
         `JMP:   out <= out;
         `JMA:   out <= out;
         `CLL:   out <= out;
